@@ -42,8 +42,8 @@ public class CreateOrder {
 
         while (state != "done")
         {
-            productID =
-            product = new Product()
+//            productID =
+//            product = new Product();
             state = sc.nextLine();
         }
     }
