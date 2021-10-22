@@ -1,6 +1,7 @@
 package test2;
 
 public class ExchangeRate {
+    private String id;
     private String name;
     private double rate;
 

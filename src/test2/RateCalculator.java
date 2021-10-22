@@ -4,6 +4,11 @@ public class RateCalculator {
     private ExchangeRate from;
     private ExchangeRate to;
     private double Amount;
+
+    public double getResult() {
+        return Result;
+    }
+
     private double Result;
 
     public RateCalculator(ExchangeRate from, ExchangeRate to, double amount) {
@@ -26,11 +31,12 @@ public class RateCalculator {
     }
 
     public void printResult(){
+        System.out.println("------Result-----");
         System.out.println(from.getName() + ": " + Amount );
         System.out.println(to.getName() + ": " + Math.round(Result*100.0)/100.0 );
     }
 
-    private double calculate() {
+    public double calculate() {
         Result = from.getRate()*Amount/to.getRate();
         return Result;
     }
