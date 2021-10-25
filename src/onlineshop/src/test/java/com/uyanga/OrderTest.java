@@ -12,8 +12,8 @@ class OrderTest {
     public void ctrThrowsExceptionWhenCustomerIDNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->{
-            List<Product> productList = new ArrayList<>();
-            productList.add(new Product("pid1", "productName", 55));
+            List<ProductListItem> productList = new ArrayList<>();
+            productList.add(new ProductListItem(new Product("pid1", "productName", 55), 2.0));
             new Order("id1", null, productList);
         });
     }
@@ -22,8 +22,8 @@ class OrderTest {
     public void ctrThrowsExceptionWhenCustomerIDEmpty()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->{
-            List<Product> productList = new ArrayList<>();
-            productList.add(new Product("pid1", "productName", 55));
+            List<ProductListItem> productList = new ArrayList<>();
+            productList.add(new ProductListItem(new Product("pid1", "productName", 55), 2.0));
             new Order("id1", "", productList);
         });
     }
@@ -31,23 +31,22 @@ class OrderTest {
     @Test
     public void ctrThrowsExceptionWhenProductListEmpty()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->{
-            new Order("id1", "", null);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new Order("id1", "", null));
     }
 
     @Test
     public void ctrCreatesInstance()
     {
-        List<Product> productList = new ArrayList<>();
-        productList.add(new Product("pid1", "productName", 55));
+        List<ProductListItem> productList = new ArrayList<>();
+        productList.add(new ProductListItem(new Product("pid1", "productName", 55), 10));
         Order order = new Order("id1", "cus1", productList);
 
         Assertions.assertNotNull(order);
         Assertions.assertEquals("id1", order.getId());
         Assertions.assertEquals("cus1", order.getCustomerID());
-        Assertions.assertEquals(productList, order.getProducts());
-        Assertions.assertEquals(55, order.getTotal());
+        Assertions.assertEquals(productList, order.getOrders());
+        Assertions.assertEquals(550.0, order.getTotal());
 
     }
 

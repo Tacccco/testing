@@ -2,12 +2,13 @@ package com.uyanga;
 
 import org.apache.commons.lang3.Validate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Stock extends Entity{
 
     private String address;
-//    private List<Product, Integer> availableProducts;
+    private List<ProductListItem> availableProducts = new ArrayList<>();
 
     public Stock(String id, String address) {
         super(id);
@@ -16,6 +17,18 @@ public class Stock extends Entity{
 
     public String getAddress() {
         return address;
+    }
+
+    public void addToProductList(ProductListItem productListItem){
+        availableProducts.add(productListItem);
+    }
+
+    public List<ProductListItem> getAvailableProducts() {
+        return availableProducts;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }

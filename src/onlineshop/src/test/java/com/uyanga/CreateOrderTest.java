@@ -6,40 +6,39 @@ import org.junit.jupiter.api.Test;
 class CreateOrderTest {
 
     @Test
-    public void ctrThrowsExceptionWhenCustomerNull()
+    public void ctrThrowsExceptionWhenProductNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
-                new CreateOrder("order1",null));
+                new CreateOrder(null,5.5));
     }
 
     @Test
-    public void ctrThrowsExceptionWhenOrderIDNull()
+    public void ctrThrowsExceptionWhenQuantityNegative()
     {
-        Assertions.assertThrows(NullPointerException.class, () ->{
-            Customer customer = new Customer("cus1", "name", "2222");
-            new CreateOrder(null,customer);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new CreateOrder(new Product("pid1", "productName", 55), -11.0));
     }
 
     @Test
-    public void ctrThrowsExceptionWhenOrderIDEmpty()
+    public void ctrThrowsExceptionWhenQuantityEquals0()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->{
-            Customer customer = new Customer("cus1", "name", "2222");
-            new CreateOrder("",customer);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new CreateOrder(new Product("pid1", "productName", 55), 0.0));
     }
 
     @Test
     public void ctrCreatesInstance()
     {
-        Customer customer = new Customer("cus1", "name", "2222");
-        CreateOrder createOrder = new CreateOrder("order1",customer);
+        Product product = new Product("pid1", "productName", 55);
+        CreateOrder createOrder = new CreateOrder(product, 2.0);
 
         Assertions.assertNotNull(createOrder);
-        Assertions.assertEquals("order1", createOrder.getOrder().getId());
-        Assertions.assertEquals(customer, createOrder.getCustomer().getId());
-        Assertions.assertNotNull(createOrder.getProductList());
+        Assertions.assertNotNull(createOrder.getProduct());
+        Assertions.assertEquals(product, createOrder.getProduct());
+        Assertions.assertEquals("pid1", createOrder.getProduct().getId());
+        Assertions.assertEquals("productName", createOrder.getProduct().getName());
+        Assertions.assertEquals(55, createOrder.getProduct().getPrice());
+        Assertions.assertEquals(2.0, createOrder.getQuantity());
 
     }
 
