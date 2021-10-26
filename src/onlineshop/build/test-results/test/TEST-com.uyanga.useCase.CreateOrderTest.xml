@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uyanga.useCase.CreateOrderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-26T08:00:45" hostname="GANTULGA" time="0.05">
+<testsuite name="com.uyanga.useCase.CreateOrderTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-10-26T08:37:40" hostname="GANTULGA" time="0.079">
   <properties/>
-  <testcase name="ordCreatesInstance()" classname="com.uyanga.useCase.CreateOrderTest" time="0.05"/>
+  <testcase name="ordcrtThrowsExceptionWhenCustomerIdNotValid()" classname="com.uyanga.useCase.CreateOrderTest" time="0.053"/>
+  <testcase name="ordcrtThrowsExceptionWhenCustomerIdEmpty()" classname="com.uyanga.useCase.CreateOrderTest" time="0.001"/>
+  <testcase name="ordcrtThrowsExceptionWhenCustomerRepositoryNull()" classname="com.uyanga.useCase.CreateOrderTest" time="0.001"/>
+  <testcase name="ordcrtThrowsExceptionWhenCustomerIdNull()" classname="com.uyanga.useCase.CreateOrderTest" time="0.001"/>
+  <testcase name="ordcrtCreatesInstance()" classname="com.uyanga.useCase.CreateOrderTest" time="0.006"/>
+  <testcase name="ordcrtThrowsExceptionWhenProductIdNotValid()" classname="com.uyanga.useCase.CreateOrderTest" time="0.002"/>
+  <testcase name="ordcrtThrowsExceptionWhenOrderedProductListIdNull()" classname="com.uyanga.useCase.CreateOrderTest" time="0.001"/>
+  <testcase name="ordcrtThrowsExceptionWhenOrderedProductListIdEmpty()" classname="com.uyanga.useCase.CreateOrderTest" time="0.001"/>
+  <testcase name="ordcrtThrowsExceptionWhenProductRepositoryNull()" classname="com.uyanga.useCase.CreateOrderTest" time="0.0"/>
+  <testcase name="ordcrtThrowsExceptionWhenProductAmountNotValid()" classname="com.uyanga.useCase.CreateOrderTest" time="0.002"/>
+  <testcase name="ordcrtThrowsExceptionWhenStockRepositoryNull()" classname="com.uyanga.useCase.CreateOrderTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

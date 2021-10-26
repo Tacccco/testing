@@ -22,28 +22,28 @@ class CreateOrderTest {
     StockRepository stockRepository = Mockito.mock(StockRepository.class);
 
     @Test
-    public void ordThrowsExceptionWhenCustomerRepositoryNull()
+    public void ordcrtThrowsExceptionWhenCustomerRepositoryNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new CreateOrder(null, productRepository, stockRepository));
     }
 
     @Test
-    public void ordThrowsExceptionWhenProductRepositoryNull()
+    public void ordcrtThrowsExceptionWhenProductRepositoryNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new CreateOrder(customerRepository, null, stockRepository));
     }
 
     @Test
-    public void ordThrowsExceptionWhenStockRepositoryNull()
+    public void ordcrtThrowsExceptionWhenStockRepositoryNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new CreateOrder(customerRepository, productRepository, null));
     }
 
     @Test
-    public void ordThrowsExceptionWhenCustomerIdNull()
+    public void ordcrtThrowsExceptionWhenCustomerIdNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->{
             List<ProductListItem> productList = new ArrayList<>();
@@ -53,7 +53,7 @@ class CreateOrderTest {
     }
 
     @Test
-    public void ordThrowsExceptionWhenCustomerIdEmpty()
+    public void ordcrtThrowsExceptionWhenCustomerIdEmpty()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->{
             List<ProductListItem> productList = new ArrayList<>();
@@ -63,7 +63,7 @@ class CreateOrderTest {
     }
 
     @Test
-    public void ordThrowsExceptionWhenCustomerIdNotValid()
+    public void ordcrtThrowsExceptionWhenCustomerIdNotValid()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->{
             Mockito.when(productRepository.findById("pId1")).thenReturn(new Product("pId1", "product_name", 8.8));
@@ -77,7 +77,7 @@ class CreateOrderTest {
     }
 
     @Test
-    public void ordThrowsExceptionWhenProductIdNotValid()
+    public void ordcrtThrowsExceptionWhenProductIdNotValid()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->{
             Mockito.when(productRepository.findById("pId1")).thenReturn(new Product("pId1", "product_name", 8.8));
@@ -91,7 +91,7 @@ class CreateOrderTest {
     }
 
     @Test
-    public void ordThrowsExceptionWhenProductAmountNotValid()
+    public void ordcrtThrowsExceptionWhenProductAmountNotValid()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->{
             Mockito.when(productRepository.findById("pId1")).thenReturn(new Product("pId1", "product_name", 8.8));
@@ -107,14 +107,14 @@ class CreateOrderTest {
     }
 
     @Test
-    public void ordThrowsExceptionWhenOrderedProductListIdNull()
+    public void ordcrtThrowsExceptionWhenOrderedProductListIdNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new CreateOrder(customerRepository, productRepository, stockRepository).execute("cID", null));
     }
 
     @Test
-    public void ordThrowsExceptionWhenOrderedProductListIdEmpty()
+    public void ordcrtThrowsExceptionWhenOrderedProductListIdEmpty()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->{
             List<ProductListItem> productList = new ArrayList<>();
@@ -123,7 +123,7 @@ class CreateOrderTest {
     }
 
     @Test
-    public void ordCreatesInstance()
+    public void ordcrtCreatesInstance()
     {
         Mockito.when(productRepository.findById("pId1")).thenReturn(new Product("pId1", "product_name", 8.8));
         Mockito.when(customerRepository.findById("cId1")).thenReturn(new Customer("cId1", "customerName", "99999999"));
