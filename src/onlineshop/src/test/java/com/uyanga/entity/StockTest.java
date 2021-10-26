@@ -1,7 +1,6 @@
-package com.uyanga.entityTests;
+package com.uyanga.entity;
 
 import com.uyanga.ProductListItem;
-import com.uyanga.entity.Stock;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

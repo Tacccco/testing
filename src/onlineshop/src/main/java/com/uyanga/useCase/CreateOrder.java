@@ -12,7 +12,7 @@ public class CreateOrder {
     {
         Validate.notBlank(customerID);
         Validate.notEmpty(orderedProducts);
-        
+
         return new Order("oID", customerID, orderedProducts );
     }
 
