@@ -24,35 +24,35 @@ class CreateCustomerTest {
     public void ordThrowsExceptionWhenCustomerPhoneNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
-                new CreateCustomer().execute("cID", null));
+                new CreateCustomer().execute("cname", null));
     }
 
     @Test
     public void ordThrowsExceptionWhenCustomerPhoneEmpty()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-                new CreateCustomer().execute("cID", ""));
+                new CreateCustomer().execute( "cname", ""));
     }
 
     @Test
     public void ordThrowsExceptionWhenCustomerPhoneNumIncludeChar()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-                new CreateCustomer().execute("cID", "887h"));
+                new CreateCustomer().execute( "cname", "887h"));
     }
 
     @Test
     public void ordThrowsExceptionWhenCustomerPhoneNumShorterThan8()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-                new CreateCustomer().execute("cID", "887"));
+                new CreateCustomer().execute("cname", "887"));
     }
 
     @Test
     public void ordThrowsExceptionWhenCustomerPhoneNumLongerThan8()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-                new CreateCustomer().execute("cID", "888888888"));
+                new CreateCustomer().execute("cname", "888888888"));
     }
 
     @Test

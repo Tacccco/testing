@@ -7,22 +7,19 @@ import java.util.List;
 public class Order extends Entity{
     private final String customerID;
     private final List<ProductListItem> orders;
+    private double total;
 
-    public Order(String id, String customerID, List<ProductListItem> orders)
+    public Order(String id, String customerID, List<ProductListItem> orders, double total)
     {
         super(id);
         this.customerID = Validate.notBlank(customerID);
         this.orders = Validate.notEmpty(orders);
-    }
-
-    private double calculateTotal()
-    {
-        double total = 0;
-//        for(ProductListItem p : orders)
-//        {
-//            total += p.getProductID() * p.getAmount();
-//        }
-        return total;
+        Validate.notNull(total);
+        if (total < 0)
+        {
+            throw new IllegalArgumentException("Total can not be Negative!");
+        }
+        this.total = total;
     }
 
     public String getCustomerID() {
@@ -33,4 +30,7 @@ public class Order extends Entity{
         return orders;
     }
 
+    public double getTotal() {
+        return total;
+    }
 }

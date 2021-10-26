@@ -1,12 +1,15 @@
 package com.uyanga.useCase;
 
 import com.uyanga.entity.Customer;
+import com.uyanga.repository.CustomerRepository;
 import org.apache.commons.lang3.Validate;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CreateCustomer {
+
+    CustomerRepository customerRepository = new CustomerRepository();
 
     public Customer execute(String name, String phoneNumber)
     {
