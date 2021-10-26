@@ -1,19 +1,20 @@
-package com.uyanga;
+package com.uyanga.entityTests;
 
+import com.uyanga.entity.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ProductTest {
 
     @Test
-    public void ctrThrowsExceptionWhenNameNull()
+    public void prdThrowsExceptionWhenNameNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new Product("id1", null, 55));
     }
 
     @Test
-    public void ctrThrowsExceptionWhenNameEmpty()
+    public void prdThrowsExceptionWhenNameEmpty()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
                 new Product("id1", "", 55));
@@ -21,14 +22,14 @@ class ProductTest {
     }
 
     @Test
-    public void ctrThrowsExceptionWhenPriceNegative()
+    public void prdThrowsExceptionWhenPriceNegative()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
                 new Product("id1", "null", -55));
     }
 
     @Test
-    public void ctrCreatesInstance()
+    public void prdCreatesInstance()
     {
         Product product = new Product("id1", "ProductName", 55);
 

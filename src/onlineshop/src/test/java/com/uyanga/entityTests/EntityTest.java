@@ -1,5 +1,6 @@
-package com.uyanga;
+package com.uyanga.entityTests;
 
+import com.uyanga.entity.Entity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -3,11 +3,11 @@ package com.uyanga;
 import org.apache.commons.lang3.Validate;
 
 public class ProductListItem {
-    protected final Product product;
+    protected final String productID;
     protected double amount;
 
-    public ProductListItem(Product product, double amount) {
-        this.product = Validate.notNull(product);
+    public ProductListItem(String productID, double amount) {
+        this.productID = Validate.notBlank(productID);
         if(amount < 0)
         {
             throw new IllegalArgumentException("Amount can not be negative");
@@ -15,8 +15,8 @@ public class ProductListItem {
         this.amount = amount;
     }
 
-    public Product getProduct() {
-        return product;
+    public String getProductID() {
+        return productID;
     }
 
     public double getAmount() {

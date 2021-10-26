@@ -6,31 +6,34 @@ import org.junit.jupiter.api.Test;
 class ProductListTest {
 
     @Test
-    public void ctrThrowsExceptionWhenProductNull()
+    public void pltThrowsExceptionWhenProductIdNull()
     {
         Assertions.assertThrows(NullPointerException.class, () ->
                 new ProductListItem(null,5.5));
     }
 
     @Test
-    public void ctrThrowsExceptionWhenAmountNegative()
+    public void pltThrowsExceptionWhenProductIdEmpty()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-                new CreateOrder(new Product("pid1", "productName", 55), -11.0));
+                new ProductListItem("",5.5));
     }
 
     @Test
-    public void ctrCreatesInstance()
+    public void pltThrowsExceptionWhenAmountNegative()
     {
-        Product product = new Product("pid1", "productName", 55);
-        ProductListItem productItem= new ProductListItem(product, 200.0);
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new ProductListItem("pid", -11.0));
+    }
+
+    @Test
+    public void pltCreatesInstance()
+    {
+        ProductListItem productItem= new ProductListItem("pid1", 200.0);
 
         Assertions.assertNotNull(productItem);
-        Assertions.assertNotNull(productItem.getProduct());
-        Assertions.assertEquals(product, productItem.getProduct());
-        Assertions.assertEquals("pid1", productItem.getProduct().getId());
-        Assertions.assertEquals("productName", productItem.getProduct().getName());
-        Assertions.assertEquals(55, productItem.getProduct().getPrice());
+        Assertions.assertNotNull(productItem.getProductID());
+        Assertions.assertEquals("pid1", productItem.getProductID());
         Assertions.assertEquals(200, productItem.getAmount());
 
     }

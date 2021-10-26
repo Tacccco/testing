@@ -1,8 +1,6 @@
-package com.uyanga;
+package com.uyanga.entity;
 
 import org.apache.commons.lang3.Validate;
-
-import java.util.Date;
 
 public class Product extends Entity{
     private final String name;

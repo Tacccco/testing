@@ -1,5 +1,6 @@
-package com.uyanga;
+package com.uyanga.entity;
 
+import com.uyanga.ProductListItem;
 import org.apache.commons.lang3.Validate;
 
 import java.util.ArrayList;

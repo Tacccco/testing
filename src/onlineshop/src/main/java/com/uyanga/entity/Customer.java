@@ -1,4 +1,4 @@
-package com.uyanga;
+package com.uyanga.entity;
 
 import org.apache.commons.lang3.Validate;
 
