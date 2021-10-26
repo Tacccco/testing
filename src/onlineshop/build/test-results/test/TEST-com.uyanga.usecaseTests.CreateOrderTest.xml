@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uyanga.usecaseTests.CreateOrderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-26T02:33:37" hostname="GANTULGA" time="0.036">
+  <properties/>
+  <testcase name="ordThrowsExceptionWhenOrderedProductListIdEmpty()" classname="com.uyanga.usecaseTests.CreateOrderTest" time="0.03"/>
+  <testcase name="ordThrowsExceptionWhenCustomerIdEmpty()" classname="com.uyanga.usecaseTests.CreateOrderTest" time="0.001"/>
+  <testcase name="ordThrowsExceptionWhenOrderedProductListIdNull()" classname="com.uyanga.usecaseTests.CreateOrderTest" time="0.001"/>
+  <testcase name="ordThrowsExceptionWhenCustomerIdNull()" classname="com.uyanga.usecaseTests.CreateOrderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

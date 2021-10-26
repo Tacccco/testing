@@ -38,6 +38,13 @@ class OrderTest {
     }
 
     @Test
+    public void ordThrowsExceptionWhenProductListEmpty()
+    {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new Order("id1", "cId1", new ArrayList<ProductListItem>()));
+    }
+
+    @Test
     public void ordCreatesInstance()
     {
         List<ProductListItem> productList = new ArrayList<>();
